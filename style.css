@@ -9,14 +9,19 @@ body {
     align-items: center;
 }
 
+.quiz_card {
+    width: 30rem;
+}
+
 .question_footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
     padding-top: 12px;
 }
 
-.quiz_card {
-    width: 30rem;
+.quiz-answer-card:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05)
 }
