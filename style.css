@@ -10,9 +10,9 @@ body {
     align-items: center;
 }
 
-.quiz_card {
+/* .quiz-card {
     width: 30rem;
-}
+} */
 
 .question_footer {
     display: flex;

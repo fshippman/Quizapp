@@ -27,52 +27,64 @@
     </nav>
 
     <div class="container">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="..." class="img-fluid rounded-start" alt="...">
+              </div>
 
-        <div class="card quiz_card">
+              <div class="col-md-8">
 
-            <img src="img/brainbg.jpg" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title" id="questiontext">Frage</h5>
+                <div class="card-body">
+
+                    <h5 class="card-title" id="questiontext">Frage</h5>
 
 
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
-                    <div class="card-body" id="answer_1">
-                        This is some text within a card body.
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
+                        <div class="card-body" id="answer_1">
+                            This is some text within a card body.
+                        </div>
                     </div>
-                </div>
-
-
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
-                    <div class="card-body" id="answer_2">
-                        This is some text within a card body.
-                    </div> 
-                </div>
-
-
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_3')">
-                    <div class="card-body" id="answer_3">
-                        This is some text within a card body.
+    
+    
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_2')">
+                        <div class="card-body" id="answer_2">
+                            This is some text within a card body.
+                        </div> 
                     </div>
-                </div>
-
-
-                <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
-                    <div class="card-body" id="answer_4">
-                        This is some text within a card body.
+    
+    
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_3')">
+                        <div class="card-body" id="answer_3">
+                            This is some text within a card body.
+                        </div>
                     </div>
+    
+    
+                    <div class="card quiz-answer-card mb-2" onclick="answer('answer_4')">
+                        <div class="card-body" id="answer_4">
+                            This is some text within a card body.
+                        </div>
+                    </div>
+    
+                    <div class="question_footer">
+                        <span>
+                            <b id="question-number"></b> von <b id="all-questions"></b> Fragen
+                           </span>
+                           <button onclick="nextQuestion()" class="btn btn-info" id="next-button" disabled>Nächste Frage</button>
+                    </div>
+
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
-
-                <div class="question_footer">
-                    <span>
-                        <b id="question-number"></b> von <b id="all-questions"></b> Fragen
-                       </span>
-                       <button onclick="nextQuestion()" class="btn btn-info" id="next-button" disabled>Nächste Frage</button>
-                </div>
-
-
-
+              </div>
             </div>
-        </div>
+          </div>
+
+
+
+
     </div>
 
 
