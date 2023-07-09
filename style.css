@@ -1,6 +1,7 @@
 body {
     background-color: yellow !important;
 }
+
 .container {
     min-height: 100vh;
     background-color: yellow !important;
@@ -24,4 +25,8 @@ body {
 .quiz-answer-card:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05)
+}
+
+.bg-success, .bg-danger {
+    color: white !important;
 }
