@@ -65,8 +65,23 @@ function init() {
 function showQuestion() {
 
     if (curentQuestion >= questions.length) { // ist 7 groesser oder gleich 7? wenn ja sound so ansonsten 
+        document.getElementById('card').innerHTML = `
+        <img src="img/3796.jpg" class="card-img-top">
+        <div class="card-body d-flex flex-column justify-content-around align-items-center">
+    
+            <div>
+                This is some text within a card body.
+            </div>
+    
+            <div>
+                Your Score
+            </div>
+    
+            <button onClick="window.location.reload()" type="button" class="btn btn-info">Restart</button>
+        </div>
+       `;
         /* TODO EMDSCREEM */
-        
+
     } else {
 
         let question = questions[curentQuestion];
@@ -96,7 +111,9 @@ function answer(selection) {  // Die Funktion sagt ich brauch was um zu funktion
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     }
+    
     document.getElementById('next-button').disabled = false;
+    document.getElementById('quiz').classList.add('lock-answers');
 }
 
 
@@ -110,6 +127,7 @@ function nextQuestion() {
 }
 
 function resetAnswerButtons() {
+    document.getElementById('quiz').classList.remove('lock-answers');
     document.getElementById('answer_1').parentNode.classList.remove('bg-danger');
     document.getElementById('answer_1').parentNode.classList.remove('bg-success');
     document.getElementById('answer_2').parentNode.classList.remove('bg-danger');
