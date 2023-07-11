@@ -65,21 +65,8 @@ function init() {
 function showQuestion() {
 
     if (curentQuestion >= questions.length) { // ist 7 groesser oder gleich 7? wenn ja sound so ansonsten 
-        document.getElementById('card').innerHTML = `
-        <img src="img/3796.jpg" class="card-img-top">
-        <div class="card-body d-flex flex-column justify-content-around align-items-center">
-    
-            <div>
-                This is some text within a card body.
-            </div>
-    
-            <div>
-                Your Score
-            </div>
-    
-            <button onClick="window.location.reload()" type="button" class="btn btn-info">Restart</button>
-        </div>
-       `;
+        document.getElementById('endScreen').style = ''; 
+        document.getElementById('questionBody').style = 'display: none';
         /* TODO EMDSCREEM */
 
     } else {
