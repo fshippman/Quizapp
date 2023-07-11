@@ -67,6 +67,7 @@ function showQuestion() {
     if (curentQuestion >= questions.length) { // ist 7 groesser oder gleich 7? wenn ja sound so ansonsten 
         document.getElementById('endScreen').style = ''; 
         document.getElementById('questionBody').style = 'display: none';
+        document.getElementById('questionImg').style = 'display: none';
         /* TODO EMDSCREEM */
 
     } else {
