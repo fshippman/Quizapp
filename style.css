@@ -1,4 +1,7 @@
-
+body {
+    /* background-color: #27355C !important; */
+    background-color: #FEFAEF !important;
+}
 
 .container {
     min-height: 100vh;
@@ -9,6 +12,10 @@
 
 .quiz_card {
     width: 30rem;
+}
+
+#questionBody {
+    background-color: #F7F7F7;
 }
 
 .question_footer {
@@ -24,9 +31,17 @@
     background-color: rgba(0, 0, 0, 0.05)
 }
 
-.bg-success, .bg-danger {
-    color: white !important;
+.bg-red {
+    /* background-color: #F81816; */
+    background-color:  #FFA3A4 !important;
+   
 }
+
+.bg-green {
+    /* background-color: #4CC014; */
+    background-color: #B7F699 !important;
+}
+
 
 .lock-answers {
     pointer-events: none;
@@ -39,5 +54,3 @@
 .text-center {
     text-align: center;
 }
-  
-

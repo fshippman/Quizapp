@@ -67,10 +67,11 @@ function showQuestion() {
     // Show Endscreen
     if (curentQuestion >= questions.length) { // ist 7 groesser oder gleich 7? wenn ja sound so ansonsten 
         document.getElementById('endScreen').style = '';
+        document.getElementById('questionBody').style = 'display: none';
+
         document.getElementById('testId').innerHTML = questions.length;
         document.getElementById('rightAnswers').innerHTML = counter
-        document.getElementById('questionBody').style = 'display: none';
-        document.getElementById('questionImg').src = 'img/winner.jpg';
+        document.getElementById('header-image').src = 'img/winner.jpg';
 
 
     } else { // Show Question 
@@ -106,12 +107,12 @@ function answer(selection) {  // Die Funktion sagt ich brauch was um zu funktion
 
 
     if (selectedQuestionNumber == question['right_answer']) {
-        document.getElementById(selection).parentNode.classList.add('bg-success');
+        document.getElementById(selection).parentNode.classList.add('bg-green');
         counter++
         console.log(counter)
     } else {
-        document.getElementById(selection).parentNode.classList.add('bg-danger');
-        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+        document.getElementById(selection).parentNode.classList.add('bg-red');
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-green');
     }
 
     document.getElementById('next-button').disabled = false;
@@ -130,15 +131,23 @@ function nextQuestion() {
 
 function resetAnswerButtons() {
     document.getElementById('quiz').classList.remove('lock-answers');
-    document.getElementById('answer_1').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer_1').parentNode.classList.remove('bg-success');
-    document.getElementById('answer_2').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer_2').parentNode.classList.remove('bg-success');
-    document.getElementById('answer_3').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer_3').parentNode.classList.remove('bg-success');
-    document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
-    document.getElementById('answer_4').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_1').parentNode.classList.remove('bg-red');
+    document.getElementById('answer_1').parentNode.classList.remove('bg-green');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-red');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-green');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-red');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-green');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-red');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-green');
 }
 
+function restartGame() {
+    document.getElementById('header-image').src = 'img/question-mark.jpg';
+    document.getElementById('questionBody').style = ''; // questionBody wieder anzeigen
+    document.getElementById('endScreen').style = 'display: none'; //Endscreen ausblenden
+    curentQuestion = 0;
+    counter = 0
+    init();
+}
 
 
