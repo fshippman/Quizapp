@@ -1,56 +1,38 @@
 let questions = [
     {
-        "question": "Was ist 1?",
-        "answer_1": "Eine Zahl",
-        "answer_2": "Ein Objekt",
-        "answer_3": "Ein string",
-        "answer_4": "Nichts",
+        "question": "Wofür steht HTML?",
+        "answer_1": "Hypersize Markup Language",
+        "answer_2": "Hyperspace Markup Language",
+        "answer_3": "Hypertext Markup Language",
+        "answer_4": "Hyperspeed Markup Language",
         "right_answer": 3
 
     },
     {
-        "question": "Was ist 2?",
-        "answer_1": "Eine Zahl",
-        "answer_2": "Ein Objekt",
-        "answer_3": "Ein string",
-        "answer_4": "Nichts",
-        "right_answer": 3
+        "question": "Wie viele Body Tags kann es geben?",
+        "answer_1": "1",
+        "answer_2": "2",
+        "answer_3": "3",
+        "answer_4": "Beliebig viele",
+        "right_answer": 1
 
     },
     {
-        "question": "Was ist 3?",
-        "answer_1": "Eine Zahl",
-        "answer_2": "Ein Objekt",
-        "answer_3": "Ein string",
-        "answer_4": "Nichts",
-        "right_answer": 3
+        "question": "In welchem Bereich befindet sich der title?",
+        "answer_1": "Im body",
+        "answer_2": "Im head",
+        "answer_3": "In beiden",
+        "answer_4": "In keinem von beiden",
+        "right_answer": 2
 
     },
     {
-        "question": "Was ist 4?",
-        "answer_1": "Eine Zahl",
-        "answer_2": "Ein Objekt",
-        "answer_3": "Ein string",
-        "answer_4": "Nichts",
-        "right_answer": 3
-
-    },
-    {
-        "question": "Was ist 5?",
-        "answer_1": "Eine Zahl",
-        "answer_2": "Ein Objekt",
-        "answer_3": "Ein string",
-        "answer_4": "Nichts",
-        "right_answer": 3
-
-    },
-    {
-        "question": "Was ist 1?",
-        "answer_1": "Eine Zahl",
-        "answer_2": "Ein Objekt",
-        "answer_3": "Ein string",
-        "answer_4": "Nichts",
-        "right_answer": 3
+        "question": "Was wird mit script src= ... eingebunden?",
+        "answer_1": "Eine mathematischer Operator",
+        "answer_2": "Ein Style",
+        "answer_3": "Ein Bild",
+        "answer_4": "Eine Javascriptdatei",
+        "right_answer": 4
 
     }
 ];
