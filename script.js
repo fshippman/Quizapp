@@ -56,6 +56,7 @@ let questions = [
 ];
 
 let curentQuestion = 0;
+let counter = 0
 
 function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
@@ -63,14 +64,24 @@ function init() {
 }
 
 function showQuestion() {
-
+    // Show Endscreen
     if (curentQuestion >= questions.length) { // ist 7 groesser oder gleich 7? wenn ja sound so ansonsten 
-        document.getElementById('endScreen').style = ''; 
+        document.getElementById('endScreen').style = '';
+        document.getElementById('testId').innerHTML = questions.length;
+        document.getElementById('rightAnswers').innerHTML = counter
         document.getElementById('questionBody').style = 'display: none';
-        document.getElementById('questionImg').style = 'display: none';
-        /* TODO EMDSCREEM */
+        document.getElementById('questionImg').src = 'img/winner.jpg';
 
-    } else {
+
+    } else { // Show Question 
+
+        let percent = (curentQuestion + 1) / questions.length;
+        percent = Math.round(percent*100);
+        console.log('Fortschritt:', percent);
+        document.getElementById('progress-bar').innerHTML = `${percent} %`  ;
+        document.getElementById('progress-bar').style =  `width: ${percent}%` ;
+
+
 
         let question = questions[curentQuestion];
 
@@ -85,6 +96,7 @@ function showQuestion() {
 
 }
 
+
 function answer(selection) {  // Die Funktion sagt ich brauch was um zu funktionieren! deshalb (selection)
     // auf den Karten ist ein onclick mit dem Text (string) der übergeben wird onclick="answer('answer_1')"
     // wenn onclick führe diese Funktion aus mit diesem Parameter der wird in die Funktion gesteckt      
@@ -95,11 +107,13 @@ function answer(selection) {  // Die Funktion sagt ich brauch was um zu funktion
 
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success');
+        counter++
+        console.log(counter)
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     }
-    
+
     document.getElementById('next-button').disabled = false;
     document.getElementById('quiz').classList.add('lock-answers');
 }
@@ -125,4 +139,6 @@ function resetAnswerButtons() {
     document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
     document.getElementById('answer_4').parentNode.classList.remove('bg-success');
 }
+
+
 
