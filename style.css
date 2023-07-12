@@ -10,8 +10,18 @@ body {
     align-items: center;
 }
 
-.quiz_card {
+.quiz-nav {
+    height: 45rem;
+    width: 10rem;
+    background-color: #27355C !important;
+}
+
+.bg-blue {
+    background-color: #27355C !important;
+}
+.quiz-card {
     width: 30rem;
+    height: 45rem;
 }
 
 #questionBody {
@@ -53,4 +63,24 @@ body {
 
 .text-center {
     text-align: center;
+}
+
+.navbar-nav {
+    --bs-nav-link-padding-x: 1rem;
+    --bs-nav-link-padding-y: 0.5rem;
+    --bs-nav-link-font-weight: ;
+    --bs-nav-link-color: white !important;
+    --bs-nav-link-hover-color: #0dcaf0 !important;
+    --bs-nav-link-disabled-color: var(--bs-secondary-color);
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+
+
+.nav-link.active {
+    color: yellow !important;
 }
