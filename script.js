@@ -37,8 +37,14 @@ let questions = [
     }
 ];
 
+
+
+
 let curentQuestion = 0;
 let counter = 0
+let AUDIO_SUCCESS = new Audio('audio/success.mp3');
+let AUDIO_FAIL = new Audio('audio/fail.mp3');
+let AUDIO_END = new Audio('audio/end.mp3');
 
 function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
@@ -54,6 +60,7 @@ function showQuestion() {
         document.getElementById('testId').innerHTML = questions.length;
         document.getElementById('rightAnswers').innerHTML = counter
         document.getElementById('header-image').src = 'img/winner.jpg';
+        AUDIO_END.play();
 
 
     } else { // Show Question 
@@ -90,11 +97,13 @@ function answer(selection) {  // Die Funktion sagt ich brauch was um zu funktion
 
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-green');
+        AUDIO_SUCCESS.play();
         counter++
-        console.log(counter)
+        
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-red');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-green');
+        AUDIO_FAIL.play();
     }
 
     document.getElementById('next-button').disabled = false;
