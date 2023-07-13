@@ -1,10 +1,10 @@
 body {
-    background-color: yellow !important;
+    background-color: #FEFAEF !important;
 }
 
 .container {
     min-height: 100vh;
-    background-color: yellow !important;
+   /*  background-color: yellow !important; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +25,29 @@ body {
 .quiz-answer-card:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05)
+}
+
+.bg-red {
+    /* background-color: #F81816; */
+    background-color:  #FFA3A4 !important;
+   
+}
+
+.bg-green {
+    /* background-color: #4CC014; */
+    background-color: #B7F699 !important;
+}
+
+.lock-answers {
+    pointer-events: none;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* .btn-primary {
