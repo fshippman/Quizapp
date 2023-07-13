@@ -13,13 +13,14 @@ body {
 /* .quiz-card {
     width: 30rem;
 } */
+.logo {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+}
 
-.question_footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.4);
-    padding-top: 12px;
+.rounded-bottom-right {
+    border-bottom-right-radius: var(--bs-card-border-radius);
 }
 
 .quiz-answer-card:hover {

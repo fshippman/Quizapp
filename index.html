@@ -20,71 +20,67 @@
 
 <body onload="init();">
 
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Progress Bar Sperre</span>
-        </div>
-    </nav>
+    
 
     <div class="container">
-        <div class="card mb-3" style="max-width: 540px; overflow: hidden;">
-            <div class="row g-0" >
+        
+        <div class="card border-0" style="max-width: 540px; overflow: hidden;">
 
-
-
-
+            <div class="row g-0">
 
                 <div class="col-md-4">
-                    <div class="d-flex flex-column">
-                        <img src="img/logo.png" class="img-fluid rounded m-4" alt="...">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+
+                        <img src="img/logo.png" class="m-3 logo" alt="...">
 
 
                         <ul class="nav flex-column">
-                            <li class="nav-item d-flex justify-content-center">
-                              <a class="nav-link" href="#">Link</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
                             </li>
-                            <li class="nav-item d-flex justify-content-center">
-                              <a class="nav-link" href="#">Link</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
                             </li>
-                            <li class="nav-item d-flex justify-content-center">
-                              <a class="nav-link" href="#">Link</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
                             </li>
-                            
-                          </ul>
+                        </ul>
 
                     </div>
-
-
-
-
                 </div>
 
 
-
-
-                <!--  -->
                 <div class="col-md-8">
-                    
-                    <div id="card" class="card quiz-card" style="width: 30rem; height: 45rem;">
-                        <img src="img/" class="card-img-top" id="header-image">
+
+                    <img src="img/question-mark.jpg" class="w-100" id="header-image">
+
+
+                    <div class="border-bottom rounded-bottom-right">
                         <div class="progress" role="progressbar" aria-label="Warning example" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar  progress-bar-striped bg-blue" id="progress-bar" style="width: 25%">25%
+                            aria-valuemin="0" aria-valuemax="100" style="border-radius: 0px; width: 100%;">
+                            <div class="progress-bar  progress-bar-striped bg-blue border-end" id="progress-bar"
+                                style="width: 25%">25%
                             </div>
                         </div>
-                        <div id="endScreen" style="display: none;">
+
+                        <!------------------------------ENDSCREEN------------------------------>
+
+                        <div id="endScreen" class="" style="display: none;">
                             <div class="card-body text-center">
                                 <div class="fs-2 mb-2">Quiz beendet</div>
                                 <div class="text-center">
-                                    Du hast <b id="rightAnswers">xxx</b> Fragen von <b id="testId"></b> richtig beantwortet.
+                                    Du hast <b id="rightAnswers">xxx</b> Fragen von <b id="testId"></b> richtig
+                                    beantwortet.
                                 </div>
-                                <button onclick="restartGame()" type="button" class="btn btn-warning mt-3">Replay</button>
+                                <button onclick="restartGame()" type="button"
+                                    class="btn btn-warning mt-3">Replay</button>
                             </div>
                         </div>
-                        <div class="card-body" id="questionBody">
-                            <div id="quiz">
+                        <!------------------------------QUIZ------------------------------>
+                        <div class="card-body " id="questionBody" >
+                            <div id="quiz" class="mb-3">
                                 <h5 class="card-title" id="questiontext">Frage</h5>
-        
+
                                 <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
                                     <div class="card-body" id="answer_1">
                                         This is some text within a card body.
@@ -106,26 +102,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="question_footer">
+                        <!------------------------------QUESTION-FOOTER------------------------------>
+                            <div class="d-flex justify-content-between align-items-center">
                                 <span>
                                     <b id="question-number"></b> von <b id="all-questions"></b> Fragen
                                 </span>
-                                <button onclick="nextQuestion()" class="btn btn-warning" id="next-button" disabled>Nächste
+                                <button onclick="nextQuestion()" class="btn btn-warning" id="next-button"
+                                    disabled>Nächste
                                     Frage</button>
                             </div>
                         </div>
+
                     </div>
 
-
-
                 </div>
+
             </div>
+
         </div>
-
-
-
-
-    </div>
 
 
 
