@@ -60,18 +60,18 @@ function showQuestion() {
         document.getElementById('testId').innerHTML = questions.length;
         document.getElementById('rightAnswers').innerHTML = counter
         document.getElementById('header-image').src = 'img/winner.jpg';
-        document.getElementById('progress-bar').innerHTML = `100%`  ;
-        document.getElementById('progress-bar').style =  `width: 100%` ;
+        document.getElementById('progress-bar').innerHTML = `100%`;
+        document.getElementById('progress-bar').style = `width: 100%`;
         AUDIO_END.play();
 
 
     } else { // Show Question 
 
         let percent = (curentQuestion) / questions.length;
-        percent = Math.round(percent*100);
+        percent = Math.round(percent * 100);
         console.log('Fortschritt:', percent);
-        document.getElementById('progress-bar').innerHTML = `${percent} %`  ;
-        document.getElementById('progress-bar').style =  `width: ${percent}%` ;
+        document.getElementById('progress-bar').innerHTML = `${percent} %`;
+        document.getElementById('progress-bar').style = `width: ${percent}%`;
 
 
 
@@ -101,7 +101,7 @@ function answer(selection) {  // Die Funktion sagt ich brauch was um zu funktion
         document.getElementById(selection).parentNode.classList.add('bg-green');
         AUDIO_SUCCESS.play();
         counter++
-        
+
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-red');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-green');
@@ -142,3 +142,5 @@ function restartGame() {
     counter = 0
     init();
 }
+
+
