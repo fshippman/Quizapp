@@ -60,12 +60,14 @@ function showQuestion() {
         document.getElementById('testId').innerHTML = questions.length;
         document.getElementById('rightAnswers').innerHTML = counter
         document.getElementById('header-image').src = 'img/winner.jpg';
+        document.getElementById('progress-bar').innerHTML = `100%`  ;
+        document.getElementById('progress-bar').style =  `width: 100%` ;
         AUDIO_END.play();
 
 
     } else { // Show Question 
 
-        let percent = (curentQuestion + 1) / questions.length;
+        let percent = (curentQuestion) / questions.length;
         percent = Math.round(percent*100);
         console.log('Fortschritt:', percent);
         document.getElementById('progress-bar').innerHTML = `${percent} %`  ;
