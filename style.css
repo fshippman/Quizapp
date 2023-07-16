@@ -109,3 +109,8 @@ body {
     color: yellow !important;
 } 
 
+@media(max-width: 768px) {
+div .quiz-card {
+    border-radius: 0;
+ }
+}
