@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quizapp</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -20,10 +21,10 @@
 
 <body onload="init();">
 
-    
+
 
     <div class="container g-0 g-md-1">
-        
+
         <div class="quiz-card card border-0">
 
             <div class="row g-0">
@@ -36,10 +37,10 @@
 
                         <ul class="nav flex-md-column d-flex m-0-md">
                             <li class="nav-item">
-                                <a class="nav-link active" id="link-1" href="#">Link</a>
+                                <a class="nav-link active" id="link-1" href="#">HTML</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="#">JS</a>
                             </li>
                         </ul>
 
@@ -63,6 +64,7 @@
                         <!------------------------------ENDSCREEN------------------------------>
 
                         <div id="endScreen" class="border-end" style="display: none;">
+
                             <div class="card-body text-center">
                                 <div class="fs-2 mb-2">Quiz beendet</div>
                                 <div class="text-center">
@@ -71,10 +73,16 @@
                                 </div>
                                 <button onclick="restartGame()" type="button"
                                     class="btn btn-warning mt-3">Replay</button>
+                                <p class="fontsize-small mt-3"><a
+                                        href="https://de.freepik.com/vektoren-kostenlos/hand-haelt-trophaee_1529994.htm#query=victory&position=32&from_view=search&track=sph">Bild
+                                        von macrovector</a> auf Freepik</p>
                             </div>
+
                         </div>
+
+
                         <!------------------------------QUIZ------------------------------>
-                        <div class="card-body border-end" id="questionBody" >
+                        <div class="card-body border-end" id="questionBody">
                             <div id="quiz" class="mb-3">
                                 <h5 class="card-title" id="questiontext">Frage</h5>
 
@@ -99,7 +107,8 @@
                                     </div>
                                 </div>
                             </div>
-                        <!------------------------------QUESTION-FOOTER------------------------------>
+                            <!------------------------------QUESTION-FOOTER------------------------------>
+
                             <div class="d-flex justify-content-between align-items-center">
                                 <span>
                                     <b id="question-number"></b> von <b id="all-questions"></b> Fragen
@@ -108,6 +117,8 @@
                                     disabled>Nächste
                                     Frage</button>
                             </div>
+
+
                         </div>
 
                     </div>
@@ -117,7 +128,6 @@
             </div>
 
         </div>
-
 
 
 

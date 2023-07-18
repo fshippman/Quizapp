@@ -33,6 +33,11 @@ body {
     background-color:  #FFA3A4 !important;
    
 }
+.fontsize-small {
+    font-size: 0.5rem!important;
+    text-align: center;
+}
+
 
 .bg-green {
     /* background-color: #4CC014; */
