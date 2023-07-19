@@ -38,54 +38,53 @@ let questions = [
 ];
 
 
-
-
 let curentQuestion = 0;
 let counter = 0
 let AUDIO_SUCCESS = new Audio('audio/success.mp3');
 let AUDIO_FAIL = new Audio('audio/fail.mp3');
 let AUDIO_END = new Audio('audio/end.mp3');
 
+
 function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
-    showQuestion();
+    show();
 }
 
-function showQuestion() {
-    // Show Endscreen
+
+function show() {
     if (curentQuestion >= questions.length) { // ist 7 groesser oder gleich 7? wenn ja sound so ansonsten 
-        document.getElementById('endScreen').style = '';
-        document.getElementById('questionBody').style = 'display: none';
-
-        document.getElementById('testId').innerHTML = questions.length;
-        document.getElementById('rightAnswers').innerHTML = counter
-        document.getElementById('header-image').src = 'img/winner.jpg';
-        document.getElementById('progress-bar').innerHTML = `100%`;
-        document.getElementById('progress-bar').style = `width: 100%`;
-        AUDIO_END.play();
-
-
-    } else { // Show Question 
-
-        let percent = (curentQuestion) / questions.length;
-        percent = Math.round(percent * 100);
-        console.log('Fortschritt:', percent);
-        document.getElementById('progress-bar').innerHTML = `${percent} %`;
-        document.getElementById('progress-bar').style = `width: ${percent}%`;
-
-
-
-        let question = questions[curentQuestion];
-
-        document.getElementById('question-number').innerHTML = curentQuestion + 1;
-        document.getElementById('questiontext').innerHTML = question['question'];
-        document.getElementById('answer_1').innerHTML = question['answer_1'];
-        document.getElementById('answer_2').innerHTML = question['answer_2'];
-        document.getElementById('answer_3').innerHTML = question['answer_3'];
-        document.getElementById('answer_4').innerHTML = question['answer_4'];
+        showEndscreen();
+    } else {
+        showQuestion();
     }
+}
 
 
+function showEndscreen() {
+    document.getElementById('endScreen').style = '';
+    document.getElementById('questionBody').style = 'display: none';
+    document.getElementById('testId').innerHTML = questions.length;
+    document.getElementById('rightAnswers').innerHTML = counter
+    document.getElementById('header-image').src = 'img/winner.jpg';
+    document.getElementById('progress-bar').innerHTML = `100%`;
+    document.getElementById('progress-bar').style = `width: 100%`;
+    AUDIO_END.play();
+}
+
+
+function showQuestion() {
+    let percent = (curentQuestion) / questions.length;
+    percent = Math.round(percent * 100);
+    console.log('Fortschritt:', percent);
+    document.getElementById('progress-bar').innerHTML = `${percent} %`;
+    document.getElementById('progress-bar').style = `width: ${percent}%`;
+    let question = questions[curentQuestion];
+    document.getElementById('question-number').innerHTML = curentQuestion + 1;
+    document.getElementById('questiontext').innerHTML = question['question'];
+    document.getElementById('answer_1').innerHTML = question['answer_1'];
+    document.getElementById('answer_2').innerHTML = question['answer_2'];
+    document.getElementById('answer_3').innerHTML = question['answer_3'];
+    document.getElementById('answer_4').innerHTML = question['answer_4'];
 }
 
 
@@ -95,32 +94,27 @@ function answer(selection) {  // Die Funktion sagt ich brauch was um zu funktion
     let question = questions[curentQuestion]; // currentQuestion = 0  ----  questions[curentQuestion] = questions[0]
     let selectedQuestionNumber = selection.slice(-1); // .slice(-1) nimmt das letzte Zeichen eines Worts, mit der Zeile wird erkannt welche Antwort gewählt wurde
     let idOfRightAnswer = `answer_${question['right_answer']}`;
-
-
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-green');
         AUDIO_SUCCESS.play();
         counter++
-
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-red');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-green');
         AUDIO_FAIL.play();
     }
-
     document.getElementById('next-button').disabled = false;
     document.getElementById('quiz').classList.add('lock-answers');
 }
 
 
-
 function nextQuestion() {
     curentQuestion++; // z.B von 0 auf 1
-
     document.getElementById('next-button').disabled = true;
     resetAnswerButtons();
-    showQuestion();
+    show();
 }
+
 
 function resetAnswerButtons() {
     document.getElementById('quiz').classList.remove('lock-answers');
@@ -133,6 +127,7 @@ function resetAnswerButtons() {
     document.getElementById('answer_4').parentNode.classList.remove('bg-red');
     document.getElementById('answer_4').parentNode.classList.remove('bg-green');
 }
+
 
 function restartGame() {
     document.getElementById('header-image').src = 'img/question-mark.jpg';
