@@ -52,11 +52,16 @@ function init() {
 
 
 function show() {
-    if (curentQuestion >= questions.length) { // ist 7 groesser oder gleich 7? wenn ja sound so ansonsten 
+    if (gameIsOver()) { 
         showEndscreen();
     } else {
+        updateProgressbar();
         showQuestion();
     }
+}
+
+function gameIsOver(){
+    return curentQuestion >= questions.length;
 }
 
 
@@ -73,11 +78,6 @@ function showEndscreen() {
 
 
 function showQuestion() {
-    let percent = (curentQuestion) / questions.length;
-    percent = Math.round(percent * 100);
-    console.log('Fortschritt:', percent);
-    document.getElementById('progress-bar').innerHTML = `${percent} %`;
-    document.getElementById('progress-bar').style = `width: ${percent}%`;
     let question = questions[curentQuestion];
     document.getElementById('question-number').innerHTML = curentQuestion + 1;
     document.getElementById('questiontext').innerHTML = question['question'];
@@ -88,13 +88,22 @@ function showQuestion() {
 }
 
 
+function updateProgressbar(){
+    let percent = (curentQuestion) / questions.length;
+    percent = Math.round(percent * 100);
+    document.getElementById('progress-bar').innerHTML = `${percent} %`;
+    document.getElementById('progress-bar').style = `width: ${percent}%`;
+}
+
+
 function answer(selection) {  // Die Funktion sagt ich brauch was um zu funktionieren! deshalb (selection)
     // auf den Karten ist ein onclick mit dem Text (string) der übergeben wird onclick="answer('answer_1')"
     // wenn onclick führe diese Funktion aus mit diesem Parameter der wird in die Funktion gesteckt      
     let question = questions[curentQuestion]; // currentQuestion = 0  ----  questions[curentQuestion] = questions[0]
     let selectedQuestionNumber = selection.slice(-1); // .slice(-1) nimmt das letzte Zeichen eines Worts, mit der Zeile wird erkannt welche Antwort gewählt wurde
     let idOfRightAnswer = `answer_${question['right_answer']}`;
-    if (selectedQuestionNumber == question['right_answer']) {
+
+    if (rightAnswerSelected(selectedQuestionNumber, question)) {
         document.getElementById(selection).parentNode.classList.add('bg-green');
         AUDIO_SUCCESS.play();
         counter++
@@ -106,6 +115,11 @@ function answer(selection) {  // Die Funktion sagt ich brauch was um zu funktion
     document.getElementById('next-button').disabled = false;
     document.getElementById('quiz').classList.add('lock-answers');
 }
+
+
+function rightAnswerSelected(selectedQuestionNumber, question) {
+    return selectedQuestionNumber == question['right_answer']
+ }
 
 
 function nextQuestion() {
