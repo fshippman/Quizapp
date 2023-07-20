@@ -78,7 +78,7 @@ function showEndscreen() {
 
 
 function showQuestion() {
-    let question = questions[curentQuestion];
+    const question = questions[curentQuestion];
     document.getElementById('question-number').innerHTML = curentQuestion + 1;
     document.getElementById('questiontext').innerHTML = question['question'];
     document.getElementById('answer_1').innerHTML = question['answer_1'];
